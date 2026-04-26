@@ -1306,7 +1306,7 @@
     </section>
     <section class="case-form-section" aria-label="Request free case evaluation">
       <h2 class="case-form-heading">Request Free Case Evaluation</h2>
-      <form class="case-form-card">
+      <form class="case-form-card" id="caseForm">
         <div class="case-form-grid">
           <div>
             <label class="case-label" for="firstName">First Name <span class="required-mark">*</span></label>
@@ -1350,21 +1350,13 @@
         <div class="insights-cta-wrap">
           <button class="hero-button" type="submit">Submit Case for Free Review</button>
         </div>
+        <p class="case-disclaimer" id="formStatus" role="status" aria-live="polite"></p>
         <p class="case-disclaimer">
           All consultations are confidential and protected by attorney-client privilege where applicable.
         </p>
       </form>
     </section>
-    <script>
-      const nav = document.querySelector(".hero-nav");
-      const toggle = document.querySelector(".nav-toggle");
-
-      if (nav && toggle) {
-        toggle.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("menu-open");
-          toggle.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-    </script>
+    <script src="./js/supabase-config.js"></script>
+    <script src="./js/index-form.js"></script>
   </body>
 </html>
