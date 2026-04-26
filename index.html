@@ -86,6 +86,23 @@
         color: rgb(160, 160, 160);
       }
 
+      .nav-toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border: 0;
+        background: transparent;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .nav-toggle svg {
+        width: 24px;
+        height: 24px;
+      }
+
       .logo-text {
         font-family: "Instrument Sans", sans-serif;
         font-size: 18px;
@@ -116,6 +133,7 @@
         }
 
         .hero-nav {
+          position: relative;
           flex-direction: row;
           justify-content: space-between;
           gap: 4px;
@@ -125,10 +143,23 @@
         }
 
         .nav-links {
-          justify-content: flex-end;
-          flex-wrap: nowrap;
-          gap: 10px;
-          flex-shrink: 0;
+          position: absolute;
+          top: calc(100% + 10px);
+          left: 0;
+          right: 0;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 12px;
+          border-radius: 12px;
+          background: rgba(18, 18, 18, 0.92);
+          backdrop-filter: blur(4px);
+          z-index: 10;
+        }
+
+        .hero-nav.menu-open .nav-links {
+          display: flex;
         }
 
         .nav-link {
@@ -137,13 +168,22 @@
           vertical-align: baseline;
         }
 
-        .hero-nav > .flex.items-center.gap-3 {
+        .hero-nav .nav-brand {
           gap: 4px;
           flex-shrink: 0;
         }
 
         .logo-text {
-          font-size: 16px;
+          font-size: 18px;
+        }
+
+        .hero-nav .nav-brand img {
+          width: 32px;
+          height: 32px;
+        }
+
+        .nav-toggle {
+          display: inline-flex;
         }
 
         .hero {
@@ -172,15 +212,20 @@
   <body class="min-h-screen">
     <div class="hero-nav-wrap mx-10 mt-2 mb-[28px] max-md:mx-3 max-md:mb-3">
       <nav class="hero-nav" aria-label="Main navigation">
-      <div class="flex items-center gap-3">
-        <img src="./logo.svg" alt="Dzhsolution logo" class="h-7 w-7" />
-        <span class="logo-text">Dzhsolution</span>
-      </div>
-      <div class="nav-links">
-        <a class="nav-link" href="#service">Service</a>
-        <a class="nav-link" href="#process">Process</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-      </div>
+        <div class="nav-brand flex items-center gap-3">
+          <img src="./logo.svg" alt="Dzhsolution logo" class="h-7 w-7" />
+          <span class="logo-text">Dzhsolution</span>
+        </div>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <div class="nav-links">
+          <a class="nav-link" href="#service">Service</a>
+          <a class="nav-link" href="#process">Process</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </div>
       </nav>
     </div>
     <main class="hero mx-10 mb-10 flex min-h-[calc(100vh-280px)] w-auto items-center px-[340px] py-14 max-md:mx-3 max-md:min-h-[calc(100svh-50px)] max-md:px-3 max-md:py-9">
@@ -196,5 +241,16 @@
         <button class="hero-button" type="button">Request Evaluation</button>
       </section>
     </main>
+    <script>
+      const nav = document.querySelector(".hero-nav");
+      const toggle = document.querySelector(".nav-toggle");
+
+      if (nav && toggle) {
+        toggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("menu-open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+      }
+    </script>
   </body>
 </html>
