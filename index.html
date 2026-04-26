@@ -658,6 +658,59 @@
         color: rgb(160, 160, 160);
       }
 
+      .site-footer {
+        margin: 0 40px 26px;
+        padding-top: 26px;
+        border-top: 1px solid rgba(160, 160, 160, 0.2);
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .footer-brand {
+        max-width: 560px;
+      }
+
+      .footer-name {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 26px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .footer-desc {
+        margin-top: 10px;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
+      .footer-links-title {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .footer-links {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-link {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
       @media (max-width: 768px) {
         .hero-nav-wrap {
           padding-left: 0;
@@ -690,7 +743,8 @@
           z-index: 10;
         }
 
-        .hero-nav.menu-open .nav-links {
+        .hero-nav.menu-open .nav-links,
+        .nav-links.open {
           display: flex;
         }
 
@@ -1033,6 +1087,26 @@
           font-size: 15px;
           line-height: 1.55;
         }
+
+        .site-footer {
+          margin: 0 12px 18px;
+          padding-top: 22px;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .footer-name {
+          font-size: 24px;
+        }
+
+        .footer-desc {
+          font-size: 15px;
+          line-height: 1.55;
+        }
+
+        .footer-links-title {
+          font-size: 17px;
+        }
       }
     </style>
   </head>
@@ -1040,8 +1114,8 @@
     <div class="hero-nav-wrap mx-10 mt-2 mb-[28px] max-md:mx-3 max-md:mb-3">
       <nav class="hero-nav" aria-label="Main navigation">
         <div class="nav-brand flex items-center gap-3">
-          <img src="./logo.svg" alt="Dzhsolution logo" class="h-7 w-7" />
-          <span class="logo-text">Dzhsolution</span>
+          <img src="./logo.jpeg" alt="PythonCyberHacks logo" class="h-7 w-7" />
+          <span class="logo-text">PythonCyberHacks</span>
         </div>
         <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1049,7 +1123,7 @@
           </svg>
         </button>
         <div class="nav-links">
-          <a class="nav-link" href="#service">Service</a>
+          <a class="nav-link" href="#services">Services</a>
           <a class="nav-link" href="#process">Process</a>
           <a class="nav-link" href="#faq">FAQ</a>
         </div>
@@ -1065,7 +1139,7 @@
           We help victims of cryptocurrency fraud with state-of-the-art blockchain analysis technology and
           experienced investigators.
         </p>
-        <button class="hero-button" type="button">Request Evaluation</button>
+        <a class="hero-button" href="#contact">Request Free Evaluation</a>
       </section>
     </main>
     <section class="stats-strip" aria-label="Company highlights">
@@ -1086,7 +1160,7 @@
         <p class="stat-label">Support Available</p>
       </div>
     </section>
-    <section class="scams-section" aria-label="Scam types we investigate">
+    <section class="scams-section" id="services" aria-label="Scam types we investigate">
       <h2 class="scams-heading">Types of Cryptocurrency Fraud We Handle</h2>
       <p class="scams-intro">
         We trace and recover assets from investment scams, romance fraud, phishing attacks, exchange breaches, impersonation, and ransomware cases.
@@ -1160,7 +1234,7 @@
         </article>
       </div>
     </section>
-    <section class="process-section" aria-label="Cryptocurrency recovery process">
+    <section class="process-section" id="process" aria-label="Cryptocurrency recovery process">
       <h2 class="process-heading">Our Cryptocurrency Recovery Process</h2>
       <p class="process-intro">
         A systematic approach to tracing and recovering your stolen cryptocurrency assets through legal channels.
@@ -1327,7 +1401,7 @@
         </article>
       </div>
       <div class="insights-cta-wrap">
-        <button class="hero-button" type="button">Schedule Free Consultation</button>
+        <a class="hero-button" href="#contact">Schedule Free Consultation</a>
       </div>
     </section>
     <section class="stories-section" aria-label="Customer success stories">
@@ -1359,7 +1433,7 @@
         </article>
       </div>
     </section>
-    <section class="case-form-section" aria-label="Request free case evaluation">
+    <section class="case-form-section" id="contact" aria-label="Request free case evaluation">
       <h2 class="case-form-heading">Request Free Case Evaluation</h2>
       <form class="case-form-card" id="caseForm">
         <div class="case-form-grid">
@@ -1421,6 +1495,23 @@
         </p>
       </div>
     </section>
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="footer-brand">
+        <h2 class="footer-name">PythonCyberHacks</h2>
+        <p class="footer-desc">
+          Professional cryptocurrency fraud recovery and asset tracing services using advanced blockchain analysis technology.
+        </p>
+      </div>
+      <div>
+        <h3 class="footer-links-title">Quick Links</h3>
+        <nav class="footer-links" aria-label="Quick links">
+          <a class="footer-link" href="#services">Services</a>
+          <a class="footer-link" href="#process">Process</a>
+          <a class="footer-link" href="#faq">FAQ</a>
+          <a class="footer-link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </footer>
     <script src="./js/supabase-config.js"></script>
     <script src="./js/index-form.js"></script>
   </body>

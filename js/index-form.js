@@ -1,15 +1,25 @@
 (function () {
   const nav = document.querySelector(".hero-nav");
   const toggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
   const form = document.getElementById("caseForm");
   const successCard = document.getElementById("caseSuccess");
   const statusNode = document.getElementById("formStatus");
   const cfg = window.APP_CONFIG;
 
-  if (nav && toggle) {
+  if (nav && toggle && navLinks) {
     toggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("menu-open");
+      navLinks.classList.toggle("open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("menu-open");
+        navLinks.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
