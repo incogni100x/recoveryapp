@@ -126,6 +126,199 @@
         letter-spacing: 0.01em;
       }
 
+      .stats-strip {
+        margin: 0 40px 40px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        font-family: "Instrument Sans", sans-serif;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 20px 12px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .stat-value {
+        font-size: 34px;
+        line-height: 1.1;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .stat-label {
+        margin-top: 6px;
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
+      .scams-section {
+        margin: 0 40px 48px;
+      }
+
+      .scams-heading {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 40px;
+        line-height: 1.15;
+        font-weight: 500;
+        letter-spacing: -0.6px;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .scams-intro {
+        margin-top: 14px;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+        text-align: center;
+      }
+
+      .scams-grid {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .scam-card {
+        flex: 1 1 calc(33.333% - 16px);
+        min-width: 260px;
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      .scam-icon {
+        width: 28px;
+        height: 28px;
+        color: rgb(36, 90, 202);
+      }
+
+      .scam-title {
+        margin-top: 14px;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 22px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .scam-text {
+        margin-top: 10px;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
+      .process-section {
+        margin: 0 40px 60px;
+      }
+
+      .process-heading {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 40px;
+        line-height: 1.15;
+        font-weight: 500;
+        letter-spacing: -0.6px;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .process-intro {
+        margin-top: 14px;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+        text-align: center;
+      }
+
+      .process-list {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .process-step {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        column-gap: 16px;
+        align-items: flex-start;
+      }
+
+      .process-marker {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .process-number {
+        width: 36px;
+        height: 36px;
+        border-radius: 9999px;
+        border: 1px solid rgb(36, 90, 202);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 15px;
+        line-height: 1;
+        font-weight: 500;
+        color: rgb(36, 90, 202);
+        background: rgba(36, 90, 202, 0.16);
+      }
+
+      .process-line {
+        position: absolute;
+        top: 42px;
+        bottom: -34px;
+        width: 1px;
+        background: rgb(160, 160, 160);
+      }
+
+      .process-step:last-child .process-line {
+        display: none;
+      }
+
+      .process-card {
+        padding: 8px 0 10px;
+      }
+
+      .process-title {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .process-text {
+        margin-top: 10px;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
       @media (max-width: 768px) {
         .hero-nav-wrap {
           padding-left: 0;
@@ -206,6 +399,114 @@
           font-weight: 400;
           vertical-align: baseline;
         }
+
+        .stats-strip {
+          margin: 0 12px 28px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .stat-item {
+          padding: 16px 10px;
+          border-radius: 14px;
+        }
+
+        .stat-value {
+          font-size: 28px;
+        }
+
+        .stat-label {
+          font-size: 14px;
+        }
+
+        .scams-section {
+          margin: 0 12px 28px;
+          text-align: center;
+        }
+
+        .scams-heading {
+          font-size: 28px;
+          line-height: 35px;
+          letter-spacing: -0.7px;
+          vertical-align: baseline;
+        }
+
+        .scams-intro {
+          margin-top: 10px;
+          font-size: 16px;
+          line-height: 1.55;
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .scams-grid {
+          margin-top: 18px;
+          gap: 10px;
+          text-align: left;
+        }
+
+        .scam-card {
+          flex: 1 1 100%;
+          min-width: 0;
+          padding: 16px;
+        }
+
+        .scam-title {
+          font-size: 20px;
+        }
+
+        .scam-text {
+          font-size: 15px;
+          line-height: 1.55;
+        }
+
+        .process-section {
+          margin: 0 12px 34px;
+        }
+
+        .process-heading {
+          font-size: 28px;
+          line-height: 35px;
+          letter-spacing: -0.7px;
+          vertical-align: baseline;
+        }
+
+        .process-intro {
+          margin-top: 10px;
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .process-list {
+          margin-top: 20px;
+          gap: 14px;
+        }
+
+        .process-step {
+          grid-template-columns: 44px 1fr;
+          column-gap: 12px;
+        }
+
+        .process-number {
+          width: 30px;
+          height: 30px;
+          font-size: 13px;
+        }
+
+        .process-line {
+          top: 36px;
+          bottom: -24px;
+        }
+
+        .process-title {
+          font-size: 20px;
+        }
+
+        .process-text {
+          font-size: 15px;
+          line-height: 1.55;
+        }
       }
     </style>
   </head>
@@ -241,6 +542,158 @@
         <button class="hero-button" type="button">Request Evaluation</button>
       </section>
     </main>
+    <section class="stats-strip" aria-label="Company highlights">
+      <div class="stat-item">
+        <div class="stat-value">$50M+</div>
+        <p class="stat-label">Assets Traced</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">1000+</div>
+        <p class="stat-label">Cases Handled</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">95%</div>
+        <p class="stat-label">Success Rate</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">24/7</div>
+        <p class="stat-label">Support Available</p>
+      </div>
+    </section>
+    <section class="scams-section" aria-label="Scam types we investigate">
+      <h2 class="scams-heading">Types of Cryptocurrency Fraud We Handle</h2>
+      <p class="scams-intro">
+        We trace and recover assets from investment scams, romance fraud, phishing attacks, exchange breaches, impersonation, and ransomware cases.
+      </p>
+      <div class="scams-grid">
+        <article class="scam-card">
+          <svg class="scam-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3l8 4v5c0 5.5-3.5 8.7-8 10-4.5-1.3-8-4.5-8-10V7l8-4z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M9 12.2l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <h3 class="scam-title">Investment Scams</h3>
+          <p class="scam-text">
+            Fake crypto investment platforms, Ponzi schemes, and fraudulent ICOs promising unrealistic returns. We trace stolen funds through complex transaction chains.
+          </p>
+        </article>
+
+        <article class="scam-card">
+          <svg class="scam-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 20s-7-4.2-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.8-7 10-7 10z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M9.5 12.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <h3 class="scam-title">Romance Scams</h3>
+          <p class="scam-text">
+            Dating app fraudsters who build trust before requesting cryptocurrency. We help victims trace these emotionally manipulative scams.
+          </p>
+        </article>
+
+        <article class="scam-card">
+          <svg class="scam-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 5h16v10H4z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M8 19h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <h3 class="scam-title">Phishing Attacks</h3>
+          <p class="scam-text">
+            Fake websites, emails, and wallet apps designed to steal private keys and passwords. We track the movement of stolen cryptocurrency.
+          </p>
+        </article>
+
+        <article class="scam-card">
+          <svg class="scam-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8" />
+            <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <h3 class="scam-title">Exchange Hacks</h3>
+          <p class="scam-text">
+            Compromised cryptocurrency exchanges and custodial wallets. We provide forensic analysis for law enforcement and insurance claims.
+          </p>
+        </article>
+
+        <article class="scam-card">
+          <svg class="scam-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.8" />
+            <path d="M5 20c1.2-3.3 3.8-5 7-5s5.8 1.7 7 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M18 4l2 2M20 4l-2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <h3 class="scam-title">Impersonation Fraud</h3>
+          <p class="scam-text">
+            Scammers posing as celebrities, government officials, or tech support. We identify the real recipients of fraudulent transfers.
+          </p>
+        </article>
+
+        <article class="scam-card">
+          <svg class="scam-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M13 3L6 14h5l-1 7 8-12h-5l0-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+          </svg>
+          <h3 class="scam-title">Ransomware</h3>
+          <p class="scam-text">
+            Malware that encrypts files and demands cryptocurrency payment. We trace ransom payments and assist law enforcement investigations.
+          </p>
+        </article>
+      </div>
+    </section>
+    <section class="process-section" aria-label="Cryptocurrency recovery process">
+      <h2 class="process-heading">Our Cryptocurrency Recovery Process</h2>
+      <p class="process-intro">
+        A systematic approach to tracing and recovering your stolen cryptocurrency assets through legal channels.
+      </p>
+
+      <div class="process-list">
+        <article class="process-step">
+          <div class="process-marker" aria-hidden="true">
+            <span class="process-number">1</span>
+            <span class="process-line"></span>
+          </div>
+          <div class="process-card">
+            <h3 class="process-title">Initial Documentation Review</h3>
+            <p class="process-text">
+              Client provides relevant information and evidence connected to the initial cryptocurrency transfers and fraud incident.
+            </p>
+          </div>
+        </article>
+
+        <article class="process-step">
+          <div class="process-marker" aria-hidden="true">
+            <span class="process-number">2</span>
+            <span class="process-line"></span>
+          </div>
+          <div class="process-card">
+            <h3 class="process-title">Blockchain Analysis</h3>
+            <p class="process-text">
+              Our investigators review documents and trace cryptocurrency movements using advanced blockchain analysis tools.
+            </p>
+          </div>
+        </article>
+
+        <article class="process-step">
+          <div class="process-marker" aria-hidden="true">
+            <span class="process-number">3</span>
+            <span class="process-line"></span>
+          </div>
+          <div class="process-card">
+            <h3 class="process-title">Comprehensive Reporting</h3>
+            <p class="process-text">
+              Detailed report documenting transactions and supporting evidence for law enforcement and legal proceedings.
+            </p>
+          </div>
+        </article>
+
+        <article class="process-step">
+          <div class="process-marker" aria-hidden="true">
+            <span class="process-number">4</span>
+            <span class="process-line"></span>
+          </div>
+          <div class="process-card">
+            <h3 class="process-title">Wallet/Account Linking &amp; Fund Transfer</h3>
+            <p class="process-text">
+              Link client's wallet or account and securely transfer recovered funds back to the client.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
     <script>
       const nav = document.querySelector(".hero-nav");
       const toggle = document.querySelector(".nav-toggle");
