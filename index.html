@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Recovery Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        background: #121212;
+        color: #ffffff;
+      }
+
+      .hero-title {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 48px;
+        line-height: 52.8px;
+        letter-spacing: -1.2px;
+        font-weight: 500;
+        vertical-align: baseline;
+      }
+
+      .hero-subtext {
+        font-family: "Inter Tight", "Inter", sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+        font-optical-sizing: auto;
+        font-variation-settings: "opsz" 32;
+        color: rgb(184, 198, 220);
+      }
+
+      .hero {
+        position: relative;
+        background-image:
+          linear-gradient(rgba(18, 18, 18, 0.3), rgba(18, 18, 18, 0.3)),
+          url("./hero.avif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 32px;
+      }
+
+      .hero-nav-wrap {
+        padding-left: 380px;
+        padding-right: 380px;
+      }
+
+      .hero-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-radius: 16px;
+        background: rgba(18, 18, 18, 0.22);
+        backdrop-filter: blur(4px);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .nav-link {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
+      .logo-text {
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+
+      .hero-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 32px;
+        padding: 10px 20px;
+        border-radius: 9999px;
+        background: rgb(36, 90, 202);
+        color: #ffffff;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+
+      @media (max-width: 768px) {
+        .hero-nav-wrap {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .hero-nav {
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 4px;
+          text-align: left;
+          padding: 8px 0;
+          flex-wrap: nowrap;
+        }
+
+        .nav-links {
+          justify-content: flex-end;
+          flex-wrap: nowrap;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+
+        .hero-nav > .flex.items-center.gap-3 {
+          gap: 4px;
+          flex-shrink: 0;
+        }
+
+        .logo-text {
+          font-size: 16px;
+        }
+
+        .hero {
+          min-height: calc(100svh - 60px);
+          border-radius: 24px;
+        }
+
+        .hero-title {
+          font-size: 36px;
+          line-height: 39.6px;
+          letter-spacing: -0.9px;
+          vertical-align: baseline;
+        }
+
+        .hero-subtext {
+          font-size: 16px;
+          line-height: 26px;
+          letter-spacing: normal;
+          word-spacing: 0;
+          font-weight: 400;
+          vertical-align: baseline;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div class="hero-nav-wrap mx-10 mt-2 mb-[28px] max-md:mx-3">
+      <nav class="hero-nav" aria-label="Main navigation">
+      <div class="flex items-center gap-3">
+        <img src="./logo.svg" alt="Dzhsolution logo" class="h-7 w-7" />
+        <span class="logo-text">Dzhsolution</span>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link" href="#service">Service</a>
+        <a class="nav-link" href="#process">Process</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+      </div>
+      </nav>
+    </div>
+    <main class="hero mx-10 mb-10 flex min-h-[calc(100vh-280px)] w-auto items-center px-[340px] py-14 max-md:mx-3 max-md:px-3 max-md:py-9">
+      <section class="mx-auto max-w-4xl text-center">
+        <h1 class="hero-title">
+          Professional Cryptocurrency Claims Assistance &amp; Asset Recovery
+        </h1>
+        <p class="hero-subtext mt-8 max-w-3xl">
+          The first step to recovering virtual assets is to determine where they were moved and to whom.
+          We help victims of cryptocurrency fraud with state-of-the-art blockchain analysis technology and
+          experienced investigators.
+        </p>
+        <button class="hero-button" type="button">Request Evaluation</button>
+      </section>
+    </main>
+  </body>
+</html>
