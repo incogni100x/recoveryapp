@@ -2,6 +2,7 @@
   const nav = document.querySelector(".hero-nav");
   const toggle = document.querySelector(".nav-toggle");
   const form = document.getElementById("caseForm");
+  const successCard = document.getElementById("caseSuccess");
   const statusNode = document.getElementById("formStatus");
   const cfg = window.APP_CONFIG;
 
@@ -52,10 +53,9 @@
       if (!response.ok) throw new Error(data.error || "Failed to submit case");
 
       form.reset();
-      setStatus(
-        `Case submitted successfully. Your case ID is ${data.caseId}. Please save it and continue to /verification.`,
-        false
-      );
+      setStatus("", false);
+      if (successCard) successCard.classList.remove("hidden");
+      form.classList.add("hidden");
     } catch (error) {
       setStatus(error.message || "Submission failed. Please try again.", true);
     }

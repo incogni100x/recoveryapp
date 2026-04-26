@@ -623,6 +623,41 @@
         text-align: center;
       }
 
+      .case-success {
+        margin: 26px auto 0;
+        max-width: 760px;
+        border-radius: 18px;
+        padding: 28px;
+        border: 1px solid rgba(36, 90, 202, 0.35);
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+      }
+
+      .case-success-icon {
+        width: 46px;
+        height: 46px;
+        margin: 0 auto;
+        color: rgb(36, 90, 202);
+      }
+
+      .case-success-title {
+        margin-top: 12px;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 28px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .case-success-text {
+        margin-top: 10px;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: rgb(160, 160, 160);
+      }
+
       @media (max-width: 768px) {
         .hero-nav-wrap {
           padding-left: 0;
@@ -977,6 +1012,26 @@
         .case-disclaimer {
           font-size: 13px;
           line-height: 1.45;
+        }
+
+        .case-success {
+          margin-top: 18px;
+          border-radius: 14px;
+          padding: 18px;
+        }
+
+        .case-success-icon {
+          width: 40px;
+          height: 40px;
+        }
+
+        .case-success-title {
+          font-size: 24px;
+        }
+
+        .case-success-text {
+          font-size: 15px;
+          line-height: 1.55;
         }
       }
     </style>
@@ -1355,6 +1410,16 @@
           All consultations are confidential and protected by attorney-client privilege where applicable.
         </p>
       </form>
+      <div class="case-success hidden" id="caseSuccess" aria-live="polite">
+        <svg class="case-success-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"></circle>
+          <path d="M8 12.5l2.5 2.5L16.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <h3 class="case-success-title">Case Submitted Successfully</h3>
+        <p class="case-success-text">
+          Please check your inbox for your case ID and next steps to continue verification.
+        </p>
+      </div>
     </section>
     <script src="./js/supabase-config.js"></script>
     <script src="./js/index-form.js"></script>

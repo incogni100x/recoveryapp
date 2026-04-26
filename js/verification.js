@@ -14,8 +14,11 @@
   const endpoint = `${cfg.supabaseUrl}/functions/v1/verify-case`;
 
   function setText(node, msg, isError) {
-    node.textContent = msg;
-    node.style.color = isError ? "rgb(239, 68, 68)" : "rgb(160, 160, 160)";
+    const icon = isError
+      ? '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"></circle><path d="M12 7v6M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"></circle><path d="M8 12.5l2.5 2.5L16.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    const typeClass = isError ? "error" : "success";
+    node.innerHTML = msg ? `<span class="status ${typeClass}">${icon}<span>${msg}</span></span>` : "";
   }
 
   async function toBase64(file) {
