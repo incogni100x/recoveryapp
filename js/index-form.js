@@ -5,6 +5,8 @@
   const form = document.getElementById("caseForm");
   const successCard = document.getElementById("caseSuccess");
   const statusNode = document.getElementById("formStatus");
+  const submitButton = document.getElementById("caseSubmitButton");
+  const submitLabel = submitButton?.querySelector(".button-label");
   const cfg = window.APP_CONFIG;
 
   if (nav && toggle && navLinks) {
@@ -33,8 +35,19 @@
     statusNode.style.color = isError ? "rgb(239, 68, 68)" : "rgb(160, 160, 160)";
   }
 
+  function setSubmitting(isSubmitting) {
+    if (!submitButton) return;
+    submitButton.disabled = isSubmitting;
+    submitButton.dataset.loading = String(isSubmitting);
+    submitButton.setAttribute("aria-busy", String(isSubmitting));
+    if (submitLabel) {
+      submitLabel.textContent = isSubmitting ? "Submitting..." : "Submit Case for Free Review";
+    }
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    setSubmitting(true);
     setStatus("Submitting your case...", false);
 
     const body = {
@@ -69,6 +82,8 @@
       form.classList.add("hidden");
     } catch (error) {
       setStatus(error.message || "Submission failed. Please try again.", true);
+    } finally {
+      setSubmitting(false);
     }
   });
 })();

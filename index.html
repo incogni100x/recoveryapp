@@ -127,6 +127,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        gap: 8px;
         margin-top: 32px;
         padding: 10px 20px;
         border-radius: 9999px;
@@ -136,6 +137,31 @@
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.01em;
+      }
+
+      .hero-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.75;
+      }
+
+      .button-spinner {
+        display: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-top-color: #ffffff;
+        border-radius: 9999px;
+        animation: button-spin 0.75s linear infinite;
+      }
+
+      .hero-button[data-loading="true"] .button-spinner {
+        display: inline-block;
+      }
+
+      @keyframes button-spin {
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       .stats-strip {
@@ -1581,7 +1607,10 @@
           </div>
         </div>
         <div class="insights-cta-wrap">
-          <button class="hero-button" type="submit">Submit Case for Free Review</button>
+          <button class="hero-button" type="submit" id="caseSubmitButton">
+            <span class="button-spinner" aria-hidden="true"></span>
+            <span class="button-label">Submit Case for Free Review</span>
+          </button>
         </div>
         <p class="case-disclaimer" id="formStatus" role="status" aria-live="polite"></p>
         <p class="case-disclaimer">
