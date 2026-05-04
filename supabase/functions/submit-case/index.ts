@@ -56,6 +56,7 @@ Deno.serve(async (req) => {
       "lastName",
       "email",
       "phone",
+      "age",
       "city",
       "country",
       "caseDescription",
@@ -67,6 +68,11 @@ Deno.serve(async (req) => {
       }
     }
 
+    const age = Number(String(body.age).trim());
+    if (!Number.isInteger(age) || age < 18 || age > 120) {
+      return jsonResponse({ error: "Age must be between 18 and 120" }, 400);
+    }
+
     const caseId = generateCaseId();
     const insertPayload = {
       case_id: caseId,
@@ -74,6 +80,7 @@ Deno.serve(async (req) => {
       last_name: String(body.lastName).trim(),
       email: String(body.email).trim().toLowerCase(),
       phone: String(body.phone).trim(),
+      age,
       city: String(body.city).trim(),
       country: String(body.country).trim(),
       case_description: String(body.caseDescription).trim(),
@@ -100,6 +107,7 @@ Deno.serve(async (req) => {
         <p><strong>Name:</strong> ${insertPayload.first_name} ${insertPayload.last_name}</p>
         <p><strong>Email:</strong> ${insertPayload.email}</p>
         <p><strong>Phone:</strong> ${insertPayload.phone}</p>
+        <p><strong>Age:</strong> ${insertPayload.age}</p>
         <p><strong>City/Country:</strong> ${insertPayload.city}, ${insertPayload.country}</p>
         <p><strong>Estimated Loss:</strong> ${insertPayload.loss_range}</p>
         <p><strong>Case Description:</strong><br/>${insertPayload.case_description.replaceAll("\n", "<br/>")}</p>

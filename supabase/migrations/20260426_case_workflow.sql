@@ -7,6 +7,7 @@ create table if not exists public.case_submissions (
   last_name text not null,
   email text not null,
   phone text not null,
+  age integer not null constraint case_submissions_age_valid check (age between 18 and 120),
   city text not null,
   country text not null,
   case_description text not null,
@@ -15,6 +16,9 @@ create table if not exists public.case_submissions (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+
+alter table public.case_submissions
+add column if not exists age integer;
 
 create table if not exists public.case_proofs (
   id uuid primary key default gen_random_uuid(),

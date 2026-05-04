@@ -42,6 +42,7 @@
       lastName: form.lastName.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
+      age: form.age.value.trim(),
       city: form.city.value.trim(),
       country: form.country.value.trim(),
       caseDescription: form.description.value.trim(),
