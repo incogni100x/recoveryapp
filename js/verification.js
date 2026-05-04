@@ -7,6 +7,8 @@
   const lookupStatus = document.getElementById("lookupStatus");
   const proofStatus = document.getElementById("proofStatus");
   const caseIdInput = document.getElementById("caseId");
+  const lookupSubmitButton = document.getElementById("lookupSubmitButton");
+  const proofSubmitButton = document.getElementById("proofSubmitButton");
   let loadedCaseId = "";
 
   if (!cfg || !lookupForm || !proofForm) return;
@@ -21,6 +23,15 @@
     node.innerHTML = msg ? `<span class="status ${typeClass}">${icon}<span>${msg}</span></span>` : "";
   }
 
+  function setButtonLoading(button, isLoading, loadingLabel, defaultLabel) {
+    if (!button) return;
+    const label = button.querySelector(".button-label");
+    button.disabled = isLoading;
+    button.dataset.loading = String(isLoading);
+    button.setAttribute("aria-busy", String(isLoading));
+    if (label) label.textContent = isLoading ? loadingLabel : defaultLabel;
+  }
+
   async function toBase64(file) {
     const arrayBuffer = await file.arrayBuffer();
     let binary = "";
@@ -33,6 +44,7 @@
     e.preventDefault();
     const caseId = caseIdInput.value.trim();
     if (!caseId) return;
+    setButtonLoading(lookupSubmitButton, true, "Retrieving...", "Retrieve Case");
     setText(lookupStatus, "Retrieving case...", false);
 
     try {
@@ -62,6 +74,8 @@
       setText(lookupStatus, "Case found. You can now submit supporting proof.", false);
     } catch (err) {
       setText(lookupStatus, err.message || "Lookup failed.", true);
+    } finally {
+      setButtonLoading(lookupSubmitButton, false, "Retrieving...", "Retrieve Case");
     }
   });
 
@@ -76,6 +90,7 @@
     const filesInput = document.getElementById("proofFiles");
     const files = Array.from(filesInput.files || []).slice(0, 3);
 
+    setButtonLoading(proofSubmitButton, true, "Submitting...", "Submit Verification Proof");
     setText(proofStatus, "Submitting proof...", false);
     try {
       const encodedFiles = [];
@@ -110,6 +125,8 @@
       setText(proofStatus, "Proof submitted successfully. Confirmation email sent.", false);
     } catch (err) {
       setText(proofStatus, err.message || "Submission failed.", true);
+    } finally {
+      setButtonLoading(proofSubmitButton, false, "Submitting...", "Submit Verification Proof");
     }
   });
 })();
